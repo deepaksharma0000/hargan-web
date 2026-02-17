@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & AI Solutions | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --cloud-blue: #00d2ff; --ai-purple: #9d50bb; }
+        body { background: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .gradient-cloud { background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%); }
+        .text-gradient { background: linear-gradient(to right, #00d2ff, #9d50bb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Floating AI Nodes Animation */
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        .ai-node {
+            position: absolute;
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 50%;
+            display: flex; items-center; justify-content: center;
+            animation: orbit 15s linear infinite;
+        }
+
+        /* Hero Sphere Glow */
+        .sphere-glow {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover { border-color: #00d2ff; transform: translateY(-10px); }
+    </style>
+</head>
+<body>
+
+    <header class="fixed top-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+        <a href="index.html"><img src="download.png" class="w-24 brightness-0 invert"></a>
+        <nav class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="service-mobile.html" class="hover:text-cyan-400">Mobile</a>
+            <a href="#" class="text-cyan-400 border-b border-cyan-400">Cloud & AI</a>
+            <a href="contact.html" class="gradient-cloud px-5 py-2 rounded-full text-white">Get Started</a>
+        </nav>
+    </header>
+
+    <main class="pt-40">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center mb-32">
+            
+            <div data-aos="fade-up">
+                <span class="text-cyan-400 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">Future-Ready Infra</span>
+                <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-tight">
+                    Scale <br><span class="text-gradient">Intelligently.</span>
+                </h1>
+                <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-md">
+                    Hum aapke business ko AWS, Azure aur Google Cloud par migrate karte hain, saath hi Custom AI models integrate karte hain for automated growth.
+                </p>
+                <div class="flex gap-6">
+                    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-xl border border-white/10">
+                        <i class="fab fa-aws text-orange-400"></i> <span class="text-xs font-bold">AWS</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-xl border border-white/10">
+                        <i class="fas fa-brain text-purple-400"></i> <span class="text-xs font-bold">OpenAI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center h-[500px]">
+                <div class="sphere-glow absolute"></div>
+                <div class="relative w-48 h-48 bg-white/5 border border-cyan-500/30 rounded-full flex items-center justify-center backdrop-blur-3xl">
+                    <i class="fas fa-server text-5xl text-cyan-400 animate-pulse"></i>
+                    
+                    <div class="ai-node" style="animation-delay: 0s;"><i class="fas fa-microchip text-xs text-cyan-400"></i></div>
+                    <div class="ai-node" style="animation-delay: -5s;"><i class="fas fa-search text-xs text-purple-400"></i></div>
+                    <div class="ai-node" style="animation-delay: -10s;"><i class="fas fa-database text-xs text-blue-400"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-32">
+            
+            <div class="glass-card p-10 rounded-[3rem]">
+                <div class="w-12 h-12 gradient-cloud rounded-2xl mb-8 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Cloud Migration</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">Seamlessly move your legacy systems to the cloud with zero downtime and 100% data integrity.</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem]">
+                <div class="w-12 h-12 bg-purple-600 rounded-2xl mb-8 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">AI & ML Ops</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">Training and deploying custom GPT models and predictive analytics tailored for your industry.</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem]">
+                <div class="w-12 h-12 bg-green-600 rounded-2xl mb-8 flex items-center justify-center shadow-lg shadow-green-500/20">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Advanced SEO</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">AI-driven keyword strategies and technical SEO audits to keep you on the first page of Google.</p>
+            </div>
+
+        </div>
+
+        <section class="max-w-5xl mx-auto px-6 mb-32">
+            <div class="gradient-cloud p-16 rounded-[4rem] text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter">Ready to Deploy?</h2>
+                    <p class="text-white/80 mb-10 max-w-lg mx-auto">Hamari cloud architecture se aapki cost 40% tak kam ho sakti hai. Aaj hi demo book karein.</p>
+                    <a href="contact.html" class="inline-block bg-white text-blue-600 px-12 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition">
+                        Get a Free Audit
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 text-center text-slate-600 text-[10px] font-black uppercase tracking-[0.5em]">
+        HarGan Tech • Cloud Sovereignty 2025
+    </footer>
+
+</body>
+</html>

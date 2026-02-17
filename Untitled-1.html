@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reveal | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --primary-red: #d3212c; }
+        
+        body { background: #ffffff; transition: background 1s ease; overflow-x: hidden; }
+        body.cinema-mode { background: #000; overflow: hidden; }
+
+        /* Character Animation */
+        .character-box {
+            position: fixed;
+            bottom: -100%; /* Hidden initially */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 100;
+            pointer-events: none;
+        }
+        .cinema-mode .character-box { bottom: 0; }
+
+        /* Phone in Hand */
+        .hand-held-phone {
+            position: absolute;
+            top: 20%;
+            left: 55%;
+            width: 180px;
+            height: 360px;
+            background: #111;
+            border: 4px solid #333;
+            border-radius: 25px;
+            transform: rotate(-5deg);
+            box-shadow: 0 0 50px rgba(211, 33, 44, 0.5);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Screen Ad Animation */
+        .ad-content {
+            width: 100%;
+            height: 100%;
+            background: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: ad-pulse 2s infinite;
+        }
+
+        @keyframes ad-pulse {
+            0% { background: #fff; }
+            50% { background: #fef2f2; }
+            100% { background: #fff; }
+        }
+
+        /* Initial Trigger Button Animation */
+        .trigger-phone {
+            width: 250px;
+            height: 500px;
+            background: #111;
+            border-radius: 40px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s;
+        }
+        .cinema-mode .trigger-phone { opacity: 0; scale: 0.5; pointer-events: none; }
+
+        .close-btn {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 101;
+            display: none;
+        }
+        .cinema-mode .close-btn { display: block; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="fixed top-0 w-full z-50 p-6 flex justify-between items-center transition-all duration-700" id="header">
+        <img src="download.png" class="w-24 object-contain" id="logo">
+        <div class="text-[10px] font-black uppercase tracking-widest text-slate-400">Click the device to start</div>
+    </header>
+
+    <main class="h-screen flex items-center justify-center">
+        
+        <div class="absolute inset-0 flex flex-col items-center justify-center opacity-5 pointer-events-none select-none">
+            <h2 class="text-[20vw] font-black leading-none">HARGAN</h2>
+            <h2 class="text-[20vw] font-black leading-none">MOBILE</h2>
+        </div>
+
+        <div class="trigger-phone shadow-2xl flex flex-col items-center justify-center gap-4 group" onclick="startShow()">
+            <i class="fas fa-fingerprint text-white/20 text-5xl group-hover:text-[#d3212c] transition-colors duration-500"></i>
+            <p class="text-white/20 font-bold text-[10px] uppercase tracking-widest">Hold to Reveal</p>
+        </div>
+
+        <div class="character-box">
+            <div class="close-btn" onclick="stopShow()"><i class="fas fa-times"></i></div>
+
+            <div class="relative w-full h-full flex justify-center">
+                <img src="https://www.pngarts.com/files/11/Male-Model-PNG-Image-Background.png" 
+                     alt="Presenter" 
+                     class="h-[80vh] object-contain">
+                
+                <div class="hand-held-phone">
+                    <div class="ad-content">
+                        <img src="download.png" class="w-20 mx-auto mb-4">
+                        <h4 class="text-black font-black text-xs leading-tight">BUILDING YOUR <br><span class="text-[#d3212c]">VISION</span></h4>
+                        <div class="mt-4 py-1 bg-black text-white text-[8px] font-black rounded-full animate-bounce">
+                            HIRE THE BEST
+                        </div>
+                        <p class="text-[6px] text-slate-400 mt-2 uppercase font-bold">iOS • ANDROID • CLOUD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="overlay-text" class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-1000 z-[99]">
+        <h3 class="text-white text-4xl font-black italic tracking-tighter">Experience Excellence.</h3>
+    </div>
+
+    <script>
+        function startShow() {
+            document.body.classList.add('cinema-mode');
+            document.getElementById('header').style.opacity = '0';
+            const overlay = document.getElementById('overlay-text');
+            
+            // Text fade-in effect
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 500);
+
+            // Text fade-out after reveal starts
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+            }, 2500);
+        }
+
+        function stopShow() {
+            document.body.classList.remove('cinema-mode');
+            document.getElementById('header').style.opacity = '1';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --primary-red: #d3212c; }
+        .gradient-red { background: linear-gradient(135deg, #d3212c 0%, #8b0000 100%); }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        .service-card { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -15px rgba(211, 33, 44, 0.1);
+            border-color: rgba(211, 33, 44, 0.2);
+        }
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+            background: #d3212c;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900 font-sans">
+
+    <header class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                   <div class="flex items-center gap-2">
+        <img src="download.png" alt="HG" class="w-22 h-10 object-contain">
+        <!-- <span class="text-xl font-extrabold tracking-tight">
+            HarGan <span class="text-[#d3212c]">Technologies</span>
+        </span> -->
+        </div>
+            </div>
+            <nav class="hidden md:flex gap-8 font-semibold text-sm items-center">
+                <a href="index.html" class="hover:text-[#d3212c] transition">Home</a>
+                <a href="services.html" class="text-[#d3212c]">Services</a>
+                <a href="portfolio.html" class="hover:text-[#d3212c] transition">Portfolio</a>
+                <a href="about.html" class="hover:text-[#d3212c] transition">About</a>
+                <a href="contact.html" class="px-5 py-2 gradient-red text-white rounded-full">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <span class="text-[#d3212c] font-black uppercase tracking-[0.3em] text-[10px]">What We Do</span>
+            <h1 class="text-5xl md:text-7xl font-black mt-4 mb-6 tracking-tighter">
+                Solutions that <span class="italic font-light">Scale</span>.
+            </h1>
+            <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                From high-concurrency Node.js backends to pixel-perfect React interfaces, we build the future of your business.
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="service-card bg-white p-10 rounded-[2.5rem]">
+                    <div class="icon-box bg-red-50 text-[#d3212c]">
+                        <i class="fas fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Architecture</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Specializing in MERN stack and Next.js for high-performance, SEO-friendly web applications.
+                    </p>
+                    <ul class="space-y-3 mb-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <li><i class="fas fa-check text-[#d3212c] mr-2"></i> Custom Dashboards</li>
+                        <li><i class="fas fa-check text-[#d3212c] mr-2"></i> Headless E-commerce</li>
+                        <li><i class="fas fa-check text-[#d3212c] mr-2"></i> API Integrations</li>
+                    </ul>
+                    <a href="service-web.html" class="text-sm font-black text-[#d3212c] flex items-center gap-2 group">
+                        Explore <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white p-10 rounded-[2.5rem]">
+                    <div class="icon-box bg-blue-50 text-blue-600">
+                        <i class="fas fa-mobile-screen-button text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Ecosystems</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Native-feel cross-platform apps using Flutter and React Native for Android & iOS.
+                    </p>
+                    <ul class="space-y-3 mb-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i> Fintech Apps</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i> Real-time Tracking</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i> PWA Development</li>
+                    </ul>
+                    <a href="service-mobile.html" class="text-sm font-black text-blue-600 flex items-center gap-2 group">
+                        Explore <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white p-10 rounded-[2.5rem]">
+                    <div class="icon-box bg-purple-50 text-purple-600">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cloud & AI</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Implementing Algo trading logic, AI automation, and robust AWS cloud infrastructure.
+                    </p>
+                    <ul class="space-y-3 mb-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <li><i class="fas fa-check text-purple-600 mr-2"></i> Trading Bots</li>
+                        <li><i class="fas fa-check text-purple-600 mr-2"></i> AWS/GCP Setup</li>
+                        <li><i class="fas fa-check text-purple-600 mr-2"></i> Data Analytics</li>
+                    </ul>
+                    <a href="service-cloud.html" class="text-sm font-black text-purple-600 flex items-center gap-2 group">
+                        Explore <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 text-white mx-6 rounded-[3rem] mb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-8 leading-tight">Our Development <br><span class="text-[#d3212c]">Lifecycle.</span></h2>
+                    <p class="text-slate-400 mb-12">We don't just write code; we architect solutions that survive high traffic and complex business logic.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full border border-red-500/50 flex items-center justify-center text-xs text-red-500 font-bold shrink-0">1</div>
+                            <p class="text-sm font-medium">Discovery & System Architecture Design</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full border border-red-500/50 flex items-center justify-center text-xs text-red-500 font-bold shrink-0">2</div>
+                            <p class="text-sm font-medium">Agile Sprints & Fullstack Development</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full border border-red-500/50 flex items-center justify-center text-xs text-red-500 font-bold shrink-0">3</div>
+                            <p class="text-sm font-medium">UAT, Security Audit & Global Deployment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                     
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+        © 2024 HarGan Technologies 
+    </footer>
+
+</body>
+</html>

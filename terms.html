@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --primary-red: #d3212c; }
+        body { background-color: #f8fafc; }
+        .red-gradient-text {
+            background: linear-gradient(135deg, #d3212c 0%, #8b0000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .terms-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .terms-card:hover {
+            border-left: 4px solid var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+        html { scroll-behavior: smooth; }
+        .sidebar-link:hover { color: var(--primary-red); }
+    </style>
+</head>
+<body class="text-slate-700 font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="download.png" alt="HG" class="h-8 object-contain">
+            <div class="flex gap-6">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-[#d3212c]">Home</a>
+                <a href="privacy.html" class="text-xs font-bold uppercase tracking-widest hover:text-[#d3212c]">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="sticky top-32 space-y-4">
+                        <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Terms Overview</h4>
+                        <nav class="flex flex-col gap-4 text-sm font-bold text-slate-500">
+                            <a href="#acceptance" class="sidebar-link transition">1. Acceptance</a>
+                            <a href="#services" class="sidebar-link transition">2. Services</a>
+                            <a href="#intellectual" class="sidebar-link transition">3. Intellectual Property</a>
+                            <a href="#payments" class="sidebar-link transition">4. Payments & Refunds</a>
+                            <a href="#liability" class="sidebar-link transition">5. Limitation of Liability</a>
+                            <a href="#termination" class="sidebar-link transition">6. Termination</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <div class="lg:col-span-9">
+                    <header class="mb-16">
+                        <span class="inline-block px-4 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest mb-4">
+                            Legal Framework
+                        </span>
+                        <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
+                            Terms of <span class="red-gradient-text">Service.</span>
+                        </h1>
+                        <p class="text-lg text-slate-500 max-w-2xl leading-relaxed">
+                            These terms govern your relationship with HarGan Technologies. By accessing our services, you agree to follow these rules.
+                        </p>
+                    </header>
+
+                    <div class="space-y-6">
+                        <section id="acceptance" class="terms-card p-8 rounded-[2rem]">
+                            <h2 class="text-2xl font-black text-slate-900 mb-4">1. Acceptance of Terms</h2>
+                            <p class="leading-relaxed">By using the website or services provided by HarGan Technologies, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
+                        </section>
+
+                        <section id="services" class="terms-card p-8 rounded-[2rem]">
+                            <h2 class="text-2xl font-black text-slate-900 mb-4">2. Provision of Services</h2>
+                            <p class="leading-relaxed">We provide IT solutions, including but not limited to Software Development, Web Design, and Algo Trading solutions. We reserve the right to modify or discontinue any service without prior notice.</p>
+                        </section>
+
+                        <section id="intellectual" class="terms-card p-8 rounded-[2rem]">
+                            <div class="flex items-start gap-4">
+                                <div class="hidden md:flex w-12 h-12 rounded-2xl bg-red-50 text-[#d3212c] items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-copyright"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-black text-slate-900 mb-4">3. Intellectual Property</h2>
+                                    <p class="leading-relaxed">All content, code, logos, and designs on this website are the property of <strong>HarGan Technologies</strong>. You may not copy, reproduce, or distribute our intellectual property without written permission.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="payments" class="terms-card p-8 rounded-[2rem]">
+                            <h2 class="text-2xl font-black text-slate-900 mb-4">4. Payments & Billing</h2>
+                            <p class="leading-relaxed mb-4">Payments for services must be made as per the agreed project milestones. Delayed payments may result in service suspension.</p>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-dashed border-slate-200 text-sm italic">
+                                Note: Refund policies vary based on the specific Service Level Agreement (SLA) signed during project onboarding.
+                            </div>
+                        </section>
+
+                        <section id="liability" class="terms-card p-8 rounded-[2rem] border-red-100">
+                            <h2 class="text-2xl font-black text-slate-900 mb-4">5. Limitation of Liability</h2>
+                            <p class="leading-relaxed italic text-slate-500">
+                                HarGan Technologies shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our services, including but not limited to data loss or financial loss in trading.
+                            </p>
+                        </section>
+
+                        <section id="termination" class="terms-card p-8 rounded-[2rem]">
+                            <h2 class="text-2xl font-black text-slate-900 mb-4">6. Termination</h2>
+                            <p class="leading-relaxed">We reserve the right to terminate or suspend access to our services immediately, without prior notice, for conduct that we believe violates these Terms or is harmful to other users or us.</p>
+                        </section>
+
+                        <section class="p-10 rounded-[3rem] bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+                            <div>
+                                <h3 class="text-2xl font-black mb-2">Need a Custom SLA?</h3>
+                                <p class="text-slate-400 text-sm">For enterprise clients, we offer customized terms.</p>
+                            </div>
+                            <a href="contact.html" class="px-8 py-4 bg-[#d3212c] text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-red-700 transition shadow-lg shadow-red-900/20">
+                                Get in Touch
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-slate-100 text-center">
+        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
+            Legal Department • HarGan Technologies • 2025
+        </p>
+    </footer>
+
+</body>
+</html>

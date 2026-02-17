@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustifye Algo powered by Trustifye | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --primary-red: #d3212c; }
+        body { background-color: #05080f; }
+        .gradient-red { background: linear-gradient(135deg, #d3212c 0%, #7a0006 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.07); backdrop-filter: blur(10px); }
+        .darixo-accent { border-left: 3px solid #d3212c; background: linear-gradient(90deg, rgba(211, 33, 44, 0.05) 0%, transparent 100%); }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981; }
+        
+        /* New Testimonial Specific Style */
+        .testimonial-glow { position: relative; }
+        .testimonial-glow::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top left, rgba(211, 33, 44, 0.05), transparent 70%);
+            pointer-events: none; border-radius: 3rem;
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans">
+
+    <header class="fixed top-0 w-full z-50 bg-[#05080f]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <img src="dd.png" alt="HG" class="w-22 h-10 object-contain">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] font-bold text-slate-500 tracking-widest hidden md:block">Strategic Partner: Trustifye</span>
+                <a href="portfolio.html" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold hover:bg-white/10 transition">Close Study</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-40">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="max-w-4xl mb-24">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="status-dot"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">India's Trusted Algo Software</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
+                    Empowering <br><span class="text-[#d3212c]">Wealth Creation.</span>
+                </h1>
+                <p class="text-xl text-slate-400 leading-relaxed max-w-2xl">
+                    Trustifye Algo Solution facilitates Algo trading with a focus on efficient execution, enabling individual investors to compete at a world-class level.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 mb-32 items-center">
+                <div class="space-y-8">
+                    <div class="darixo-accent p-8 rounded-r-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-4">Eliminate Trading Emotions</h3>
+                        <p class="text-slate-400">Subscribe to Trustifye Algo Solution to compete with common trading biases. Our automated style ensures every trade is executed based on logic, not fear or greed.</p>
+                    </div>
+                    <div class="darixo-accent p-8 rounded-r-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-4">World-Class Support</h3>
+                        <p class="text-slate-400">Along with highly-professional services, we provide 24/7 technical assistance to ensure your trading journey remains uninterrupted.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-red-600/10 blur-[100px]"></div>
+                    <div class="glass-card p-10 rounded-[3rem] border-white/10">
+                        <h4 class="text-white font-bold mb-6 flex items-center gap-2">
+                            <i class="fas fa-microchip text-[#d3212c]"></i> Execution Logic
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                                <span class="text-sm font-medium">Tick-by-Tick Analysis</span>
+                                <span class="text-[10px] font-bold text-green-500">ACTIVE</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                                <span class="text-sm font-medium">Order Latency</span>
+                                <span class="text-sm font-bold text-white">&lt; 35ms</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                                <span class="text-sm font-medium">Multi-Broker Bridge</span>
+                                <span class="text-[10px] font-bold text-blue-500">STABLE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mb-32">
+                <div class="text-center mb-16">
+                    <span class="text-[#d3212c] font-black uppercase tracking-widest text-xs">The Minds Behind Trustifye</span>
+                    <h2 class="text-4xl font-black text-white mt-2">Our Engineering Team</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-[2.5rem] text-center group hover:border-[#d3212c] transition">
+                        <div class="w-20 h-20 gradient-red rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl text-white">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Fullstack Experts</h4>
+                        <p class="text-sm text-slate-500 mt-2">Handling the Node.js core and React dashboard for zero-lag user experience.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-[2.5rem] text-center group hover:border-[#d3212c] transition">
+                        <div class="w-20 h-20 bg-blue-600/20 rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl text-blue-500">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Algo Strategists</h4>
+                        <p class="text-sm text-slate-500 mt-2">Designing complex mathematical models that convert market data into profit.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-[2.5rem] text-center group hover:border-[#d3212c] transition">
+                        <div class="w-20 h-20 bg-green-600/20 rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl text-green-500">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Infra Architects</h4>
+                        <p class="text-sm text-slate-500 mt-2">Managing high-concurrency AWS servers and real-time WebSocket bridges.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32">
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass-card testimonial-glow p-10 md:p-16 rounded-[3.5rem] border-white/10 relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 opacity-[0.03]">
+                            <i class="fas fa-quote-right text-[15rem] text-white"></i>
+                        </div>
+                        
+                        <div class="relative z-10 text-center">
+                            <div class="flex justify-center gap-1.5 text-amber-500 mb-8">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            
+                            <h3 class="text-2xl md:text-4xl font-bold text-white italic leading-tight mb-10">
+                                "HarGan Technologies transformed our vision into a lightning-fast reality. The low-latency execution and the seamless multi-broker bridge they built for Trustifye is truly world-class."
+                            </h3>
+                            
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-full border-2 border-[#d3212c] p-1 mb-4 shadow-[0_0_20px_rgba(211,33,44,0.3)]">
+                                    <img src="https://ui-avatars.com/api/?name=Trustifye+CEO&background=d3212c&color=fff" alt="Client" class="w-full h-full rounded-full object-cover">
+                                </div>
+                                <h5 class="text-xl font-black text-white tracking-tight">Harsh Pawar</h5>
+                                <p class="text-[10px] font-bold text-[#d3212c] uppercase tracking-[0.3em] mt-1">Founder & CEO, Trustifye Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="gradient-red p-12 md:p-20 rounded-[4rem] text-center mb-20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-10 opacity-10">
+                    <i class="fas fa-rocket text-9xl"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Start Your Algo Journey.</h2>
+                <p class="text-white/80 text-lg mb-10 max-w-xl mx-auto">Subscribe to the trading style characterized by precision and efficient execution.</p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-red-600 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition">Connect with Team</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-600 text-[10px] font-bold uppercase tracking-[0.4em]">
+        © 2024 HarGan Technologies • Powered by Trustifye Solutions
+    </footer>
+
+</body>
+</html>

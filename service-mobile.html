@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reveal | HarGan Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root { --primary-red: #d3212c; }
+        body { background: #ffffff; transition: background 1s ease; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body.cinema-mode { background: #000; overflow: hidden; }
+        
+        /* Hide scrollbar during cinema mode */
+        body.cinema-mode::-webkit-scrollbar { display: none; }
+
+        /* Character Animation - Fixed for Mobile */
+        .character-box {
+            position: fixed;
+            bottom: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 100;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+        }
+        .cinema-mode .character-box { bottom: 0; }
+
+        /* Phone in Hand - Responsive Scaling */
+        .hand-held-phone {
+            position: absolute;
+            top: 25%; 
+            left: 52%;
+            width: 140px; 
+            height: 280px;
+            background: #111;
+            border: 4px solid #333;
+            border-radius: 20px;
+            transform: rotate(-5deg);
+            box-shadow: 0 0 50px rgba(211, 33, 44, 0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 640px) {
+            .hand-held-phone {
+                width: 100px;
+                height: 200px;
+                top: 30%;
+                left: 55%;
+            }
+            .character-box img[alt="Presenter"] {
+                height: 70vh !important;
+            }
+            #bg-text h2 { font-size: 15vw !important; }
+        }
+
+        /* Tech-Wall Parallax */
+        #tech-wall {
+            display: none; 
+            padding: 60px 0;
+            background: #000;
+        }
+        .tech-column { transition: transform 0.1s ease-out; }
+        .tech-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        .tech-card:hover { border-color: var(--primary-red); transform: translateY(-10px); background: rgba(211,33,44,0.05); }
+
+        .reveal-visible { display: block !important; animation: fadeIn 1s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Slider inside Phone */
+        @keyframes slideContent {
+            0% { transform: translateY(0); }
+            33% { transform: translateY(-100%); }
+            66% { transform: translateY(-200%); }
+            100% { transform: translateY(0); }
+        }
+        .phone-slider { animation: slideContent 9s infinite; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="fixed top-0 w-full z-[110] p-4 md:p-6 flex justify-between items-center transition-all duration-700" id="header">
+        <img src="download.png" class="w-16 md:w-24 object-contain" id="logo">
+        <div class="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-400" id="header-text">Click to start experience</div>
+    </header>
+
+    <main id="hero-section" class="h-screen flex items-center justify-center relative bg-white transition-colors duration-1000">
+        <div class="absolute inset-0 flex flex-col items-center justify-center opacity-5 pointer-events-none select-none" id="bg-text">
+            <h2 class="text-[18vw] font-black leading-none">HARGAN</h2>
+            <h2 class="text-[18vw] font-black leading-none">MOBILE</h2>
+        </div>
+
+        <div id="trigger" class="trigger-phone shadow-2xl flex flex-col items-center justify-center gap-4 group cursor-pointer border-2 border-slate-100 rounded-[30px] md:rounded-[40px] w-[200px] h-[350px] md:w-[250px] md:h-[450px] bg-white transition-all hover:border-[#d3212c] z-10" onclick="startShow()">
+            <i class="fas fa-fingerprint text-slate-200 text-4xl md:text-5xl group-hover:text-[#d3212c] transition-colors duration-500"></i>
+            <p class="text-slate-300 font-bold text-[8px] md:text-[10px] uppercase tracking-widest group-hover:text-slate-900">Hold to Reveal</p>
+        </div>
+
+        <div class="character-box" id="character-reveal">
+            <div class="relative w-full h-full flex justify-center">
+                <img src="download.png" alt="Presenter" class="h-[80vh] md:h-[85vh] object-contain opacity-10"/>
+
+                <div class="hand-held-phone">
+                    <div class="phone-slider h-full">
+                        <div class="h-full w-full bg-white flex flex-col items-center justify-center p-2 text-center">
+                            <img src="download.png" class="w-10 mb-2">
+                            <h4 class="text-black font-black text-[8px] md:text-[10px]">HARGAN TECH</h4>
+                        </div>
+                        <div class="h-full w-full bg-[#d3212c] flex flex-col items-center justify-center p-2 text-white text-center">
+                            <i class="fab fa-apple text-2xl md:text-3xl mb-2"></i>
+                            <h4 class="font-black text-[8px] md:text-[10px]">iOS & ANDROID</h4>
+                        </div>
+                        <div class="h-full w-full bg-black flex flex-col items-center justify-center p-2 text-white text-center">
+                            <i class="fab fa-react text-2xl md:text-3xl mb-2 text-cyan-400"></i>
+                            <h4 class="font-black text-[8px] md:text-[10px]">REACT NATIVE</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="unlockPage()" class="absolute bottom-10 left-1/2 -translate-x-1/2 md:translate-x-0 md:right-0 md:left-auto bg-white text-black px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest pointer-events-auto hover:bg-[#d3212c] hover:text-white shadow-xl transition-all">Explore More ↓</button>
+        </div>
+    </main>
+
+    <section id="tech-wall" class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-4xl md:text-7xl text-white font-black mb-12 md:mb-20 tracking-tighter">Our Tech <span class="text-[#d3212c]">Stack.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+                <div class="tech-column space-y-6 md:space-y-10" id="col-1">
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fab fa-react text-4xl md:text-5xl text-cyan-400 mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">React Native</h4>
+                        <p class="text-slate-500 mt-4 text-sm">High-performance hybrid apps with a single codebase.</p>
+                    </div>
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fab fa-android text-4xl md:text-5xl text-green-500 mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">Android Native</h4>
+                        <p class="text-slate-500 mt-4 text-sm">Kotlin-based robust mobile architectures.</p>
+                    </div>
+                </div>
+
+                <div class="tech-column space-y-6 md:space-y-10 md:mt-20" id="col-2">
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fab fa-apple text-4xl md:text-5xl text-white mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">iOS Native</h4>
+                        <p class="text-slate-500 mt-4 text-sm">Swift experiences for the Apple ecosystem.</p>
+                    </div>
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fas fa-layer-group text-4xl md:text-5xl text-blue-500 mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">Flutter</h4>
+                        <p class="text-slate-500 mt-4 text-sm">Beautiful UI with 60FPS performance.</p>
+                    </div>
+                </div>
+
+                <div class="tech-column space-y-6 md:space-y-10" id="col-3">
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fab fa-node-js text-4xl md:text-5xl text-green-600 mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">Node.js</h4>
+                        <p class="text-slate-500 mt-4 text-sm">Scalable backend for real-time applications.</p>
+                    </div>
+                    <div class="tech-card p-8 md:p-10 rounded-[30px] md:rounded-[40px]">
+                        <i class="fas fa-cloud text-4xl md:text-5xl text-[#d3212c] mb-6"></i>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">Cloud Infra</h4>
+                        <p class="text-slate-500 mt-4 text-sm">AWS and Firebase for lightning-fast sync.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="owner-section" class="py-20 md:py-32 bg-black hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-[#d3212c] opacity-20 blur-2xl group-hover:opacity-40 transition-all"></div>
+                <img src="1766061375399.jpg" 
+                     class="relative rounded-[30px] md:rounded-[50px] grayscale hover:grayscale-0 transition-all duration-1000 w-full h-[400px] md:h-[600px] object-cover border border-white/10">
+            </div>
+            <div>
+                <h3 class="text-[#d3212c] font-black uppercase tracking-[0.3em] text-xs mb-6">The Visionary</h3>
+                <h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-tight">Engineering with <br>HarGan Tech.</h2>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
+                  Our mission is to simplify technology. At HarGan Technologies, we go beyond writing code—we help turn your ideas into scalable, secure products.
+                </p>
+                <div class="flex gap-4">
+                    <a href="contact.html" class="px-8 py-4 bg-[#d3212c] text-white font-black uppercase text-[10px] tracking-widest rounded-full inline-block">Let's Connect</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="overlay-text" class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-1000 z-[99]">
+        <h3 class="text-black md:text-white text-2xl md:text-4xl font-black italic tracking-tighter bg-white/80 md:bg-transparent p-4 rounded-lg">Experience Excellence.</h3>
+    </div>
+
+    <script>
+        function startShow() {
+            document.body.classList.add('cinema-mode');
+            document.getElementById('header').style.opacity = '0';
+            document.getElementById('bg-text').style.opacity = '0';
+            const overlay = document.getElementById('overlay-text');
+            
+            setTimeout(() => { overlay.style.opacity = '1'; }, 500);
+            setTimeout(() => { overlay.style.opacity = '0'; }, 2000);
+        }
+
+        function unlockPage() {
+            document.body.classList.remove('cinema-mode');
+            document.getElementById('character-reveal').style.display = 'none';
+            document.getElementById('hero-section').style.backgroundColor = '#000';
+            document.getElementById('header').style.opacity = '1';
+            document.getElementById('logo').style.filter = 'brightness(0) invert(1)';
+            
+            document.getElementById('tech-wall').classList.add('reveal-visible');
+            document.getElementById('owner-section').classList.add('reveal-visible');
+            
+            window.scrollBy({ top: 300, behavior: 'smooth' });
+        }
+
+        // Mouse Parallax (Only for Desktop)
+        window.addEventListener('mousemove', function(e) {
+            if (window.innerWidth > 768 && document.getElementById('tech-wall').classList.contains('reveal-visible')) {
+                const y = (e.clientY - window.innerHeight / 2) * 0.05;
+                document.getElementById('col-1').style.transform = `translateY(${y}px)`;
+                document.getElementById('col-2').style.transform = `translateY(${-y * 1.2}px)`;
+                document.getElementById('col-3').style.transform = `translateY(${y * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
